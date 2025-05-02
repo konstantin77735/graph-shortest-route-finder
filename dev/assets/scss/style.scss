@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  
+    &__title {
+      font-size: 24px;
+    }
+  }
+  
+  .main {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .graph-solver {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  
+    &__label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+  
+    &__textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+  
+    &__vertices {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+    }
+  
+    &__form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+  
+    &__button {
+      background-color: #6200ea;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+  
+      &:hover {
+        background-color: #3700b3;
+      }
+    }
+  
+    &__subtitle {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  
+    &__result {
+      background-color: #f4f4f9;
+      padding: 10px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+    }
+
+    &__steps {
+        margin-top: 20px;
+      }
+    
+      &__steps-list {
+        list-style: none;
+        padding: 0;
+    
+        li {
+          background-color: #f4f4f9;
+          padding: 10px;
+          margin-bottom: 8px;
+          border-radius: 4px;
+          border-left: 4px solid #6200ea;
+        }
+      }
+    }
+
+
+  
+  .footer {
+    background-color: #6200ea;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  
+    &__text {
+      font-size: 14px;
+    }
+  }

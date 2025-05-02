@@ -1,0 +1,32 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Кратчайший путь в графе
+    link(rel='stylesheet' href='assets/css/style.css')
+  body
+    .page
+      header.header
+        h1.header__title Поиск кратчайшего пути в графе
+      main.main
+        section.graph-solver
+          .graph-solver__form
+            div.graph-solver__matrix-input
+              label.graph-solver__label(for='matrix') Введите матрицу смежности (5 строк по 5 цифр):
+              textarea.graph-solver__textarea#matrix(rows='5' placeholder='Пример:\n01824\n10729\n87023\n22208\n49380')
+            .graph-solver__vertices
+              label.graph-solver__label(for='start-vertex') Начальная вершина (Введите значение/число):
+              input.graph-solver__input#start-vertex(type='number' min='1' max='5' value='1')
+              label.graph-solver__label(for='end-vertex') Конечная вершина (Введите значение/число):
+              input.graph-solver__input#end-vertex(type='number' min='1' max='5' value='3')
+            button.graph-solver__button#solve-button Решить
+          .graph-solver__output
+            h2.graph-solver__subtitle Результат:
+            p.graph-solver__result#result
+          .graph-solver__steps
+            h2.graph-solver__subtitle Пошаговое решение:
+            ul.graph-solver__steps-list#steps
+      footer.footer
+        p.footer__text © 2025. Решение задачи на графах.
+    script(src='assets/js/main.js')

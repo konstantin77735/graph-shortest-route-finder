@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кратчайший путь в графе</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="header__title">Поиск кратчайшего пути в графе</h1>
+      </header>
+      <main class="main">
+        <section class="graph-solver">
+          <div class="graph-solver__form">
+            <div class="graph-solver__matrix-input">
+              <label class="graph-solver__label" for="matrix">Введите матрицу смежности (5 строк по 5 цифр):</label>
+              <textarea class="graph-solver__textarea" id="matrix" rows="5" placeholder="Пример:
+01824
+10729
+87023
+22208
+49380"></textarea>
+            </div>
+            <div class="graph-solver__vertices">
+              <label class="graph-solver__label" for="start-vertex">Начальная вершина (Введите значение/число):</label>
+              <input class="graph-solver__input" id="start-vertex" type="number" min="1" max="5" value="1">
+              <label class="graph-solver__label" for="end-vertex">Конечная вершина (Введите значение/число):</label>
+              <input class="graph-solver__input" id="end-vertex" type="number" min="1" max="5" value="3">
+            </div>
+            <button class="graph-solver__button" id="solve-button">Решить</button>
+          </div>
+          <div class="graph-solver__output">
+            <h2 class="graph-solver__subtitle">Результат:</h2>
+            <p class="graph-solver__result" id="result"></p>
+          </div>
+          <div class="graph-solver__steps">
+            <h2 class="graph-solver__subtitle">Пошаговое решение:</h2>
+            <ul class="graph-solver__steps-list" id="steps"></ul>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">© 2025. Решение задачи на графах.</p>
+      </footer>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
