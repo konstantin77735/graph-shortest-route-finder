@@ -17,7 +17,7 @@ class GraphModel {
     distances[this.startVertex] = 0;
 
     // Шаг 1: Инициализация
-    this.steps.push(`Инициализация: Устанавливаем расстояние до начальной вершины ${this.startVertex + 1} равным 0, до остальных — бесконечность.`);
+    //this.steps.push(`Инициализация: Устанавливаем расстояние до начальной вершины ${this.startVertex + 1} равным 0, до остальных — бесконечность.`);
 
     for (let i = 0; i < n; i++) {
       // Находим необработанную вершину с минимальным расстоянием
@@ -56,7 +56,8 @@ class GraphModel {
               path.unshift(current + 1); // 1-based
               current = predecessors[current];
             }
-            this.steps.push(`Обновляем расстояние до вершины ${v + 1}: ${distances[v]} (путь: ${path.join(' → ')}, вес ребра ${this.matrix[u][v]}).`);
+            this.steps.push(`Ребро: ${path.join(' → ')}, вес ребра ${this.matrix[u][v]}`);
+          
           }
         }
       }
