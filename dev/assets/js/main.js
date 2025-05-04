@@ -158,21 +158,21 @@ class GraphController {
 
     // Валидация
     const rows = matrixInput.split('\n').filter(row => row.trim() !== '');
-    if (rows.length !== 5) {
-      this.view.displayError('Матрица должна содержать ровно 5 строк.');
+    const n = rows.length;
+    if (n === 0) {
+      this.view.displayError('Матрица не должна быть пустой.');
       return;
     }
 
     const matrix = [];
-    for (let row of rows) {
+    for (let rowIdx = 0; rowIdx < n; rowIdx++) {
+      const row = rows[rowIdx];
       // Разделяем строку по пробелам и убираем лишние пробелы
       const digits = row.trim().split(/\s+/).map(Number);
-      if (digits.length !== 5 || digits.some(isNaN)) {
-        this.view.displayError('Каждая строка должна содержать ровно 5 чисел, разделённых пробелами.');
+      if (digits.length !== n || digits.some(isNaN)) {
+        this.view.displayError(`Каждая строка должна содержать ровно ${n} чисел, разделённых пробелами.`);
         return;
       }
-      // Убрана проверка на диапазон 0-9
-      // Добавим проверку на отрицательные числа, так как веса рёбер в графе должны быть неотрицательными
       if (digits.some(d => d < 0)) {
         this.view.displayError('Числа в матрице не могут быть отрицательными.');
         return;
@@ -180,8 +180,8 @@ class GraphController {
       matrix.push(digits);
     }
 
-    if (startVertex < 1 || startVertex > 5 || endVertex < 1 || endVertex > 5) {
-      this.view.displayError('Вершины должны быть числами от 1 до 5.');
+    if (startVertex < 1 || startVertex > n || endVertex < 1 || endVertex > n) {
+      this.view.displayError(`Вершины должны быть числами от 1 до ${n}.`);
       return;
     }
 
@@ -195,7 +195,7 @@ class GraphController {
 
 // Инициализация приложения
 document.addEventListener('DOMContentLoaded', () => {
-  const model = new GraphModel([], 1, 3);
+  const model = new GraphModel([], 1, 2);
   const view = new GraphView();
   const controller = new GraphController(model, view);
 });
